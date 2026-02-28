@@ -1,5 +1,5 @@
 ############################################################
-# Arty Z7-20 HDMI - Minimal Constraints (fixed)
+# Arty Z7-20 HDMI - Minimal Constraints
 ############################################################
 
 ############################
@@ -47,23 +47,3 @@ set_property PACKAGE_PIN J18 [get_ports hdmi_tx_d2_p]
 set_property PACKAGE_PIN H18 [get_ports hdmi_tx_d2_n]
 set_property IOSTANDARD TMDS_33 [get_ports hdmi_tx_d2_p]
 set_property IOSTANDARD TMDS_33 [get_ports hdmi_tx_d2_n]
-
-## Clock
-#set_property -dict { PACKAGE_PIN H16 IOSTANDARD LVCMOS33 } [get_ports { clk_100mhz }]
-
-## HDMI TX Clock
-#set_property -dict { PACKAGE_PIN L17 IOSTANDARD TMDS_33 } [get_ports { hdmi_tx_clk_n }]
-#set_property -dict { PACKAGE_PIN L16 IOSTANDARD TMDS_33 } [get_ports { hdmi_tx_clk_p }]
-
-## HDMI TX Data 0
-#set_property -dict { PACKAGE_PIN K18 IOSTANDARD TMDS_33 } [get_ports { hdmi_tx_d0_n }]
-#set_property -dict { PACKAGE_PIN K17 IOSTANDARD TMDS_33 } [get_ports { hdmi_tx_d0_p }]
-
-## HDMI TX Data 1
-#set_property -dict { PACKAGE_PIN J19 IOSTANDARD TMDS_33 } [get_ports { hdmi_tx_d1_n }]
-#set_property -dict { PACKAGE_PIN K19 IOSTANDARD TMDS_33 } [get_ports { hdmi_tx_d1_p }]
-
-## HDMI TX Data 2
-#set_property -dict { PACKAGE_PIN H18 IOSTANDARD TMDS_33 } [get_ports { hdmi_tx_d2_n }]
-#set_property -dict { PACKAGE_PIN J18 IOSTANDARD TMDS_33 } [get_ports { hdmi_tx_d2_p }]
-
