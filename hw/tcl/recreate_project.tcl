@@ -27,6 +27,7 @@ if {[llength [get_board_parts -quiet $board_part_name]] > 0} {
 
 add_files -norecurse [list \
   [file join $hw_dir "src/sources/verilog/hdmi_core.v"] \
+  [file join $hw_dir "src/sources/verilog/hdmi_clock.v"] \
   [file join $hw_dir "src/sources/verilog/pixel_gen.v"] \
   [file join $hw_dir "src/sources/verilog/popcount8.v"] \
   [file join $hw_dir "src/sources/verilog/tmds_encoder.v"] \
@@ -48,10 +49,6 @@ add_files -fileset sim_1 -norecurse [list \
   [file join $hw_dir "src/sim/tmds_stage_1_tb.v"] \
   [file join $hw_dir "src/sim/tmds_stage_2_tb.v"] \
   [file join $hw_dir "src/sim/video_timer_tb.v"] \
-]
-
-add_files -fileset sources_1 -norecurse [list \
-  [file join $hw_dir "src/sources/ip/clk_wiz_0.xci"] \
 ]
 
 # Explicitly enable files so project recreation is deterministic.

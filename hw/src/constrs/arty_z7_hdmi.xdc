@@ -3,11 +3,11 @@
 ############################################################
 
 ############################
-# PL clock (H16)
+# PL clock (H16, 125 MHz on Arty Z7-20)
 ############################
 set_property PACKAGE_PIN H16 [get_ports clk_100mhz]
 set_property IOSTANDARD LVCMOS33 [get_ports clk_100mhz]
-# Do NOT create_clock here; clk_wiz_0.xdc already does it
+create_clock -period 8.000 -name clk_125mhz [get_ports clk_100mhz]
 
 ############################
 # Optional reset button (BTNU)

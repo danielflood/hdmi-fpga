@@ -22,16 +22,12 @@ module hdmi_top (
     wire clk_5x;      // ~371.25 MHz (5 × pix)
     wire clk_locked;
 
-    // Instantiate Vivado Clocking Wizard (create this IP yourself)
-    // Configure:
-    //   - Input: 100 MHz
-    //   - Outputs: clk_pix = 74.25 MHz, clk_5x = 371.25 MHz
-    clk_wiz_0 u_clk_wiz (
-        .clk_in1 (clk_100mhz),
-        .reset   (1'b0),
-        .locked  (clk_locked),
-        .clk_out1(clk_pix),
-        .clk_out2(clk_5x)
+    hdmi_clock u_hdmi_clock (
+        .clk_in (clk_100mhz),
+        .rst    (1'b0),
+        .locked (clk_locked),
+        .clk_pix(clk_pix),
+        .clk_5x (clk_5x)
     );
 
     // Sync reset to pixel clock and gate with MMCM lock
@@ -112,4 +108,3 @@ module hdmi_top (
     );
 
 endmodule
-
