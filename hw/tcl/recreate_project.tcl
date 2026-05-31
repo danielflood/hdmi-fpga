@@ -26,29 +26,29 @@ if {[llength [get_board_parts -quiet $board_part_name]] > 0} {
 }
 
 add_files -norecurse [list \
-  [file join $hw_dir "src/sources/verilog/hdmi_core.v"] \
-  [file join $hw_dir "src/sources/verilog/hdmi_clock.v"] \
-  [file join $hw_dir "src/sources/verilog/pixel_gen.v"] \
-  [file join $hw_dir "src/sources/verilog/popcount8.v"] \
-  [file join $hw_dir "src/sources/verilog/tmds_encoder.v"] \
-  [file join $hw_dir "src/sources/verilog/tmds_serializer.v"] \
-  [file join $hw_dir "src/sources/verilog/tmds_stage_0.v"] \
-  [file join $hw_dir "src/sources/verilog/tmds_stage_1.v"] \
-  [file join $hw_dir "src/sources/verilog/tmds_stage_2.v"] \
-  [file join $hw_dir "src/sources/verilog/video_timer.v"] \
-  [file join $hw_dir "src/sources/verilog/hdmi_top.v"] \
+  [file join $hw_dir "rtl/hdmi_core.v"] \
+  [file join $hw_dir "rtl/hdmi_clock.v"] \
+  [file join $hw_dir "rtl/pixel_gen.v"] \
+  [file join $hw_dir "rtl/popcount8.v"] \
+  [file join $hw_dir "rtl/tmds_encoder.v"] \
+  [file join $hw_dir "rtl/tmds_serializer.v"] \
+  [file join $hw_dir "rtl/tmds_stage_0.v"] \
+  [file join $hw_dir "rtl/tmds_stage_1.v"] \
+  [file join $hw_dir "rtl/tmds_stage_2.v"] \
+  [file join $hw_dir "rtl/video_timer.v"] \
+  [file join $hw_dir "rtl/hdmi_top.v"] \
 ]
 
 add_files -fileset constrs_1 -norecurse [list \
-  [file join $hw_dir "src/constrs/arty_z7_hdmi.xdc"] \
+  [file join $hw_dir "constrs/arty_z7_hdmi.xdc"] \
 ]
 
 add_files -fileset sim_1 -norecurse [list \
-  [file join $hw_dir "src/sim/tmds_encoder_tb.v"] \
-  [file join $hw_dir "src/sim/tmds_stage_0_tb.v"] \
-  [file join $hw_dir "src/sim/tmds_stage_1_tb.v"] \
-  [file join $hw_dir "src/sim/tmds_stage_2_tb.v"] \
-  [file join $hw_dir "src/sim/video_timer_tb.v"] \
+  [file join $hw_dir "sim/tmds_encoder_tb.v"] \
+  [file join $hw_dir "sim/tmds_stage_0_tb.v"] \
+  [file join $hw_dir "sim/tmds_stage_1_tb.v"] \
+  [file join $hw_dir "sim/tmds_stage_2_tb.v"] \
+  [file join $hw_dir "sim/video_timer_tb.v"] \
 ]
 
 # Explicitly enable files so project recreation is deterministic.

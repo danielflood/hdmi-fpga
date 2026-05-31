@@ -3,6 +3,16 @@
 Use the checked-in scripts to recreate, build, and program the Vivado project.
 The bash wrappers keep Vivado logs and generated files under `hw/vivado`.
 
+## Repository layout
+
+```text
+hw/rtl      Synthesizable Verilog
+hw/sim      Verilog testbenches
+hw/constrs  Vivado constraints
+hw/tcl      Vivado Tcl entry points
+hw/scripts  User-facing shell wrappers
+```
+
 ## Recreate the project
 
 Run from the repository root:
