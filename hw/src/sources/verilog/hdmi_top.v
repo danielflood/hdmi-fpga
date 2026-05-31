@@ -2,7 +2,7 @@
 
 // Top-level for Arty Z7-20 HDMI
 module hdmi_top (
-    input  wire clk_100mhz,
+    input  wire clk_125mhz,
     input  wire rst_btn,   // active-high pushbutton
 
     // HDMI TMDS differential outputs
@@ -16,14 +16,14 @@ module hdmi_top (
     output wire hdmi_tx_d2_n
 );
     //--------------------------------------------------------------
-    // 1) Clocking: 100 MHz -> 74.25 MHz (pix) and 371.25 MHz (5x)
+    // 1) Clocking: 125 MHz -> 74.25 MHz (pix) and 371.25 MHz (5x)
     //--------------------------------------------------------------
     wire clk_pix;     // ~74.25 MHz
     wire clk_5x;      // ~371.25 MHz (5 × pix)
     wire clk_locked;
 
     hdmi_clock u_hdmi_clock (
-        .clk_in (clk_100mhz),
+        .clk_in (clk_125mhz),
         .rst    (1'b0),
         .locked (clk_locked),
         .clk_pix(clk_pix),
@@ -71,7 +71,7 @@ module hdmi_top (
     //--------------------------------------------------------------
     // 4) Serialize each 10-bit word and drive differential outputs
     //--------------------------------------------------------------
-    tmds_out u_tmds_clk (
+    tmds_serializer u_tmds_clk (
         .clk_5x   (clk_5x),
         .clk_pix  (clk_pix),
         .rst      (rst),
@@ -80,7 +80,7 @@ module hdmi_top (
         .tmds_n   (hdmi_tx_clk_n)
     );
 
-    tmds_out u_tmds_b (
+    tmds_serializer u_tmds_b (
         .clk_5x   (clk_5x),
         .clk_pix  (clk_pix),
         .rst      (rst),
@@ -89,7 +89,7 @@ module hdmi_top (
         .tmds_n   (hdmi_tx_d0_n)
     );
 
-    tmds_out u_tmds_g (
+    tmds_serializer u_tmds_g (
         .clk_5x   (clk_5x),
         .clk_pix  (clk_pix),
         .rst      (rst),
@@ -98,7 +98,7 @@ module hdmi_top (
         .tmds_n   (hdmi_tx_d1_n)
     );
 
-    tmds_out u_tmds_r (
+    tmds_serializer u_tmds_r (
         .clk_5x   (clk_5x),
         .clk_pix  (clk_pix),
         .rst      (rst),

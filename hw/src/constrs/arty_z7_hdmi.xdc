@@ -5,14 +5,14 @@
 ############################
 # PL clock (H16, 125 MHz on Arty Z7-20)
 ############################
-set_property PACKAGE_PIN H16 [get_ports clk_100mhz]
-set_property IOSTANDARD LVCMOS33 [get_ports clk_100mhz]
-create_clock -period 8.000 -name clk_125mhz [get_ports clk_100mhz]
+set_property PACKAGE_PIN H16 [get_ports clk_125mhz]
+set_property IOSTANDARD LVCMOS33 [get_ports clk_125mhz]
+create_clock -period 8.000 -name clk_125mhz [get_ports clk_125mhz]
 
 ############################
-# Optional reset button (BTNU)
+# Optional reset button (BTN0)
 ############################
-set_property PACKAGE_PIN N15 [get_ports rst_btn]
+set_property PACKAGE_PIN D19 [get_ports rst_btn]
 set_property IOSTANDARD LVCMOS33 [get_ports rst_btn]
 set_property PULLDOWN true [get_ports rst_btn]
 

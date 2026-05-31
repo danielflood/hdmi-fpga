@@ -31,7 +31,7 @@ add_files -norecurse [list \
   [file join $hw_dir "src/sources/verilog/pixel_gen.v"] \
   [file join $hw_dir "src/sources/verilog/popcount8.v"] \
   [file join $hw_dir "src/sources/verilog/tmds_encoder.v"] \
-  [file join $hw_dir "src/sources/verilog/tmds_out.v"] \
+  [file join $hw_dir "src/sources/verilog/tmds_serializer.v"] \
   [file join $hw_dir "src/sources/verilog/tmds_stage_0.v"] \
   [file join $hw_dir "src/sources/verilog/tmds_stage_1.v"] \
   [file join $hw_dir "src/sources/verilog/tmds_stage_2.v"] \

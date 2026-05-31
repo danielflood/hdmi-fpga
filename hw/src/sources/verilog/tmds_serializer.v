@@ -3,7 +3,7 @@
 // Serialize one 10-bit TMDS word onto a differential pair
 // clk_pix = pixel clock (1x)
 // clk_5x  = 5x pixel clock (used with DDR to get 10x bit rate)
-module tmds_out (
+module tmds_serializer (
     input        clk_pix,
     input        clk_5x,
     input        rst,
@@ -129,4 +129,3 @@ module tmds_out (
     );
 
 endmodule
-
